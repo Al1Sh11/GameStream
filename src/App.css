@@ -1,0 +1,1115 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+  color: #f5f7ff;
+  background: radial-gradient(circle at 10% 10%, #243b71 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, #9d4edd 0%, transparent 30%),
+    linear-gradient(120deg, #0b132b, #1c2541);
+  background-attachment: fixed;
+}
+
+body.steam-page {
+  background: radial-gradient(circle at 10% 10%, #1b2838 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, #2a475e 0%, transparent 30%),
+    linear-gradient(120deg, #0b132b, #1b2838);
+  background-attachment: fixed;
+}
+
+body.xbox-page {
+  background: radial-gradient(circle at 10% 10%, #06451c 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, #1be36b 0%, transparent 30%),
+    linear-gradient(120deg, #0b132b, #1c2541);
+  background-attachment: fixed;
+}
+
+body.playstation-page {
+  background: radial-gradient(circle at 10% 10%, #5cb0ad 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, #2c64a1 0%, transparent 30%),
+    linear-gradient(120deg, #0b132b, #1c2541);
+  background-attachment: fixed;
+}
+
+body.nintendo-page {
+  background: radial-gradient(circle at 10% 10%, #e60012 0%, transparent 35%),
+    radial-gradient(circle at 90% 20%, #8b0000 0%, transparent 30%),
+    linear-gradient(120deg, #0b132b, #1c2541);
+  background-attachment: fixed;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: min(1100px, 92%);
+  margin: 18px auto 0;
+  padding: 14px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.navbar.xbox-nav {
+  border-color: rgba(88, 228, 151, 0.18);
+  background: rgba(4, 83, 16, 0.08);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #f5f7ff;
+}
+
+.brand.pixel-font {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #ffb703;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+.brand-badge {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #ffb703;
+  color: #1a1a1a;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: #bfc7e6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #f5f7ff;
+}
+
+.nav-links a.active {
+  color: #ffb703;
+}
+
+.steam-nav .nav-links a:hover,
+.steam-nav .nav-links a.active {
+  color: #66c0f4;
+}
+
+.xbox-nav .nav-links a:hover,
+.xbox-nav .nav-links a.active {
+  color: #1be36b;
+}
+
+.playstation-nav .nav-links a:hover,
+.playstation-nav .nav-links a.active {
+  color: #5cb0ad;
+}
+
+.nintendo-nav .nav-links a:hover,
+.nintendo-nav .nav-links a.active {
+  color: #ff4d4d;
+}
+
+.cta {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 0;
+  font-weight: 700;
+  text-decoration: none;
+  color: #161616;
+  background: #ffb703;
+  transition: transform 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: 0;
+  color: #f5f7ff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.hero {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  padding: 60px 40px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 183, 3, 0.15), rgba(157, 78, 221, 0.15)),
+    rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 183, 3, 0.2);
+  text-align: center;
+}
+
+.hero.steam-hero {
+  background: linear-gradient(135deg, rgba(102, 192, 244, 0.15), rgba(27, 40, 56, 0.5));
+  border-color: rgba(102, 192, 244, 0.3);
+}
+
+.hero.xbox-hero {
+  background: linear-gradient(135deg, rgba(4, 83, 16, 0.08), rgba(29, 155, 88, 0.3));
+  border-color: rgba(88, 228, 151, 0.18);
+}
+
+.hero.playstation-hero {
+  background: linear-gradient(135deg, rgba(37, 168, 239, 0.15), rgba(54, 196, 214, 0.3));
+  border-color: rgba(89, 171, 238, 0.3);
+}
+
+.hero.nintendo-hero {
+  background: linear-gradient(135deg, rgba(230, 0, 18, 0.15), rgba(139, 0, 0, 0.3));
+  border-color: rgba(230, 0, 18, 0.3);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #ffb703, #9d4edd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero.steam-hero h1 {
+  background: none;
+  -webkit-text-fill-color: #66c0f4;
+  color: #66c0f4;
+}
+
+.hero.xbox-hero h1 {
+  background: none;
+  -webkit-text-fill-color: #1be36b;
+  color: #1be36b;
+}
+
+.hero.playstation-hero h1 {
+  background: none;
+  -webkit-text-fill-color: #4bb4ff;
+  color: #4bb4ff;
+}
+
+.hero.nintendo-hero h1 {
+  background: none;
+  -webkit-text-fill-color: #ff4d4d;
+  color: #ff4d4d;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #bfc7e6;
+  margin-bottom: 32px;
+}
+
+.deals-banner {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.deal-card {
+  padding: 16px 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  text-align: left;
+  min-width: 200px;
+}
+
+.deal-label {
+  font-size: 0.75rem;
+  color: #ffb703;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.deal-text {
+  font-weight: 600;
+  color: #f5f7ff;
+}
+
+.platform-selector {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.platform-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #f5f7ff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.platform-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.platform-btn.steam:hover {
+  border-color: #1b2838;
+  background: rgba(27, 40, 56, 0.5);
+}
+
+.platform-btn.xbox:hover {
+  border-color: #107c10;
+  background: rgba(16, 124, 16, 0.3);
+}
+
+.platform-btn.playstation:hover {
+  border-color: #003791;
+  background: rgba(0, 55, 145, 0.3);
+}
+
+.platform-btn.nintendo:hover {
+  border-color: #e60012;
+  background: rgba(230, 0, 18, 0.3);
+}
+
+.platform-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.platform-icon-steam {
+  background: #1b2838;
+}
+
+.platform-icon-xbox {
+  background: #107c10;
+}
+
+.platform-icon-playstation {
+  background: #003791;
+}
+
+.platform-icon-nintendo {
+  background: #e60012;
+}
+
+.section {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.section.xbox-section {
+  background: rgba(4, 83, 16, 0.08);
+  border-color: rgba(88, 228, 151, 0.18);
+}
+
+.section.playstation-section {
+  background: rgba(37, 168, 239, 0.15);
+  border-color: rgba(89, 171, 238, 0.3);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.section-header.steam-border {
+  border-bottom-color: rgba(102, 192, 244, 0.3);
+}
+
+.section-header.xbox-border {
+  border-bottom-color: rgba(88, 228, 151, 0.18);
+}
+
+.section-header.ps-border {
+  border-bottom-color: rgba(37, 168, 239, 0.15);
+}
+
+.section-header.nintendo-border {
+  border-bottom-color: rgba(230, 0, 18, 0.3);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f5f7ff;
+}
+
+.section-title.steam-title {
+  color: #66c0f4;
+}
+
+.section-title.xbox-title {
+  color: #1be36b;
+}
+
+.section-title.playstation-title {
+  color: #4bb4ff;
+}
+
+.section-title.nintendo-title {
+  color: #ff4d4d;
+}
+
+.section-title .icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  background: #ffb703;
+  color: #1a1a1a;
+}
+
+.see-all-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: transparent;
+  color: #bfc7e6;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.see-all-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f7ff;
+}
+
+.best-sellers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.game-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.game-card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #2a2a4a, #1a1a2e);
+  display: block;
+}
+
+.game-info {
+  padding: 16px;
+}
+
+.game-platform {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.platform-steam {
+  background: rgba(102, 192, 244, 0.2);
+  color: #66c0f4;
+}
+
+.platform-xbox {
+  background: rgba(155, 240, 11, 0.2);
+  color: #9bf00b;
+}
+
+.platform-playstation {
+  background: rgba(0, 67, 156, 0.3);
+  color: #66a0ff;
+}
+
+.platform-nintendo {
+  background: rgba(230, 0, 18, 0.2);
+  color: #ff4d4d;
+}
+
+.game-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f5f7ff;
+}
+
+.game-price-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.game-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffb703;
+}
+
+.original-price {
+  font-size: 0.85rem;
+  color: #888;
+  text-decoration: line-through;
+}
+
+.discount-badge {
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #4caf50;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.featured-games {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.featured-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(102, 192, 244, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-card.xbox-card {
+  background: rgba(4, 83, 16, 0.08);
+  border-color: rgba(88, 228, 151, 0.18);
+}
+
+.featured-card.ps-card {
+  background: rgba(37, 168, 239, 0.15);
+  border-color: rgba(89, 171, 238, 0.3);
+}
+
+.featured-card.nintendo-card {
+  border-color: rgba(230, 0, 18, 0.2);
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+}
+
+.featured-card.steam-card:hover {
+  box-shadow: 0 10px 30px rgba(102, 192, 244, 0.2);
+}
+
+.featured-card.xbox-card:hover {
+  box-shadow: 0 10px 30px rgba(89, 171, 238, 0.3);
+  border-color: #1be36b;
+}
+
+.featured-card.ps-card:hover {
+  box-shadow: 0 10px 30px rgba(89, 171, 238, 0.3);
+  border-color: #4bb4ff;
+}
+
+.featured-card.nintendo-card:hover {
+  box-shadow: 0 10px 30px rgba(255, 77, 77, 0.4);
+  border-color: #ff4d4d;
+}
+
+.featured-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, #2a2a4a, #1a1a2e);
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  background: #ffb703;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.featured-badge.xbox-badge {
+  background: #1be36b;
+  color: #1a1a1a;
+}
+
+.featured-info {
+  padding: 16px;
+}
+
+.featured-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+  color: #f5f7ff;
+}
+
+.featured-game-price {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffb703;
+}
+
+.featured-game-price.xbox-fp {
+  color: #1be36b;
+}
+
+.original-price-lg {
+  font-size: 0.9rem;
+  color: #888;
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+.games-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.platform-game-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(102, 192, 244, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.platform-game-card.xbox-game-card {
+  background: rgba(4, 83, 16, 0.08);
+  border-color: rgba(88, 228, 151, 0.18);
+}
+
+.platform-game-card.ps-game-card {
+  background: rgba(37, 168, 239, 0.15);
+  border-color: rgba(89, 171, 238, 0.3);
+}
+
+.platform-game-card.nintendo-game-card {
+  border-color: rgba(230, 0, 18, 0.1);
+}
+
+.platform-game-card:hover {
+  transform: scale(1.03);
+}
+
+.platform-game-card.steam-game-card:hover {
+  border-color: rgba(102, 192, 244, 0.4);
+}
+
+.platform-game-card.xbox-game-card:hover {
+  border-color: #0284c7;
+  box-shadow: 0 0 20px rgba(88, 228, 151, 0.18);
+}
+
+.platform-game-card.ps-game-card:hover {
+  border-color: #0284c7;
+  box-shadow: 0 0 20px rgba(89, 171, 238, 0.3);
+}
+
+.platform-game-card.nintendo-game-card:hover {
+  border-color: #ff4d4d;
+  box-shadow: 0 0 20px rgba(255, 77, 77, 0.5);
+}
+
+.platform-game-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(135deg, #2a475e, #1b2838);
+}
+
+.game-card-info {
+  padding: 12px;
+}
+
+.game-card-title {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f5f7ff;
+}
+
+.game-card-price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffb703;
+}
+
+.game-card-price.xbox-price {
+  color: #1be36b;
+}
+
+.discount-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: #4c6b22;
+  color: #beee11;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.nswitch-badge {
+  display: inline-block;
+  padding: 2px 6px;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #e60012, #ff4d4d);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-right: 6px;
+}
+
+.go-website-btn {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  background: #0ea5e9;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+.go-website-btn:hover {
+  background: #0284c7;
+}
+
+.buy-btn {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, #1a9fff, #66c0f4);
+  color: #0b1220;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  filter: brightness(1.05);
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(255, 183, 3, 0.4);
+}
+
+.buy-btn.xbox-buy {
+  background: #1be36b;
+  color: #1a1a1a;
+}
+
+.buy-btn.xbox-buy:hover {
+  background: #1be36b;
+}
+
+.buy-btn.ps-buy {
+  background: #4bb4ff;
+  color: #1a1a1a;
+}
+
+.buy-btn.ps-buy:hover {
+  background: #ffc933;
+}
+
+.buy-btn.nintendo-buy {
+  background: #ffb703;
+  color: #1a1a1a;
+}
+
+.buy-btn.nintendo-buy:hover {
+  background: #ffc933;
+}
+
+.equipment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.equipment-card {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.equipment-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.equipment-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background: linear-gradient(135deg, #2a2a4a, #1a1a2e);
+  display: block;
+}
+
+.equipment-info {
+  padding: 16px;
+}
+
+.equipment-category {
+  font-size: 0.75rem;
+  color: #9d4edd;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.equipment-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #f5f7ff;
+}
+
+.equipment-price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffb703;
+}
+
+.footer {
+  width: min(1100px, 92%);
+  margin: 60px auto 30px;
+  padding: 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+}
+
+.footer.xbox-footer {
+  background: rgba(4, 83, 16, 0.08);
+  border-color: rgba(88, 228, 151, 0.18);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: #bfc7e6;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #f5f7ff;
+}
+
+.footer.steam-footer .footer-links a:hover {
+  color: #66c0f4;
+}
+
+.footer.xbox-footer .footer-links a:hover {
+  color: #1be36b;
+}
+
+.footer.playstation-footer .footer-links a:hover {
+  color: #21dcea;
+}
+
+.footer.nintendo-footer .footer-links a:hover {
+  color: #ff4d4d;
+}
+
+.footer-copy {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ring i {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(255, 255, 255, 0.18);
+  transition: 0.4s;
+}
+
+.ring i:nth-child(1) {
+  border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
+  animation: animateRing 6s linear infinite;
+}
+
+.ring i:nth-child(2) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animateRing 4s linear infinite;
+}
+
+.ring i:nth-child(3) {
+  border-radius: 41% 44% 56% 59% / 38% 62% 63% 37%;
+  animation: animateRing2 10s linear infinite;
+}
+
+.ring:hover i:nth-child(1) {
+  border: 6px solid #ffb703;
+  filter: drop-shadow(0 0 20px #ffb703);
+}
+
+.ring:hover i:nth-child(2) {
+  border: 6px solid #bfc7e6;
+  filter: drop-shadow(0 0 20px #bfc7e6);
+}
+
+.ring:hover i:nth-child(3) {
+  border: 6px solid #f5f7ff;
+  filter: drop-shadow(0 0 20px #f5f7ff);
+}
+
+.login-form {
+  position: absolute;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 4px;
+  color: #f5f7ff;
+}
+
+.inputBox input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #f5f7ff;
+  outline: none;
+  font-family: "Trebuchet MS", sans-serif;
+  font-size: 14px;
+}
+
+.inputBox input[type="submit"] {
+  background: #ffb703;
+  color: #161616;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.inputBox input[type="submit"]:hover {
+  background: #ffc947;
+}
+
+.login-links {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.login-links a {
+  color: #bfc7e6;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login-links a:hover {
+  color: #f5f7ff;
+}
+
+@keyframes animateRing {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animateRing2 {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@media (max-width: 760px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .nav-links {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 10px;
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .cta {
+    display: none;
+  }
+
+  .hero {
+    padding: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
+  }
+
+  .best-sellers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .equipment-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  }
+
+  .section {
+    padding: 20px;
+  }
+
+  .featured-games {
+    grid-template-columns: 1fr;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+}
