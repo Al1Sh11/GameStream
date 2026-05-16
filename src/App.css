@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -15,6 +16,7 @@ body {
     linear-gradient(120deg, #0b132b, #1c2541);
   background-attachment: fixed;
 }
+
 
 body.steam-page {
   background: radial-gradient(circle at 10% 10%, #1b2838 0%, transparent 35%),
@@ -1269,5 +1271,538 @@ body.nintendo-page {
 
   .user-greeting {
     display: none;
+  }
+}
+
+.cart-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  padding: 7px 11px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #f5f7ff;
+  transition: all 0.2s ease;
+}
+
+.cart-btn:hover {
+  background: rgba(255, 183, 3, 0.15);
+  border-color: #ffb703;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ffb703;
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: 800;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.user-area {
+  position: relative;
+}
+
+.user-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 183, 3, 0.12);
+  border: 1px solid rgba(255, 183, 3, 0.35);
+  border-radius: 8px;
+  padding: 7px 12px;
+  color: #ffb703;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.user-btn:hover {
+  background: rgba(255, 183, 3, 0.22);
+}
+
+.dropdown-arrow {
+  font-size: 9px;
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #1c2541;
+  border: 1px solid rgba(255, 183, 3, 0.3);
+  border-radius: 12px;
+  padding: 12px;
+  width: 300px;
+  z-index: 300;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  animation: fadeInDown 0.18s ease;
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.dropdown-header {
+  font-size: 12px;
+  color: #bfc7e6;
+  padding: 0 4px 8px;
+}
+
+.dropdown-header strong {
+  color: #f5f7ff;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 8px 0;
+}
+
+.dropdown-section-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffb703;
+  font-weight: 700;
+  padding: 4px 4px 6px;
+}
+
+.dropdown-empty {
+  font-size: 12px;
+  color: #888;
+  padding: 6px 4px;
+  text-align: center;
+}
+
+.dropdown-order {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.dropdown-order-id {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ffb703;
+  margin-bottom: 2px;
+}
+
+.dropdown-order-meta {
+  font-size: 10px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.dropdown-order-games {
+  font-size: 11px;
+  color: #bfc7e6;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dropdown-key-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 3px;
+}
+
+.dropdown-key-title {
+  font-size: 10px;
+  color: #bfc7e6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100px;
+}
+
+.dropdown-key-val {
+  font-size: 10px;
+  font-family: "Courier New", monospace;
+  color: #4ade80;
+  letter-spacing: 1px;
+}
+
+.dropdown-logout {
+  width: 100%;
+  padding: 9px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 100, 100, 0.3);
+  background: rgba(255, 80, 80, 0.08);
+  color: #ff8080;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+  transition: all 0.2s ease;
+  margin-top: 4px;
+}
+
+.dropdown-logout:hover {
+  background: rgba(255, 80, 80, 0.2);
+}
+
+.checkout-wrapper {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.checkout-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #f5f7ff;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.checkout-left,
+.checkout-right {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 28px;
+}
+
+.checkout-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.checkout-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.checkout-item-img {
+  width: 70px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.checkout-item-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.checkout-item-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f5f7ff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.checkout-item-price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffb703;
+  flex-shrink: 0;
+}
+
+.promo-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.promo-input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f7ff;
+  font-size: 13px;
+  font-family: "Trebuchet MS", sans-serif;
+  outline: none;
+}
+
+.promo-input:focus {
+  border-color: #ffb703;
+}
+
+.promo-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #ffb703;
+  color: #1a1a1a;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.promo-success {
+  font-size: 12px;
+  color: #4ade80;
+  margin-bottom: 10px;
+}
+
+.checkout-totals {
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #bfc7e6;
+  margin-bottom: 8px;
+}
+
+.discount-row {
+  color: #4ade80;
+}
+
+.grand-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffb703;
+  margin-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.field-group label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #bfc7e6;
+}
+
+.field-group input,
+.country-select {
+  padding: 11px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  color: #f5f7ff;
+  font-size: 14px;
+  font-family: "Trebuchet MS", sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.field-group input:focus,
+.country-select:focus {
+  border-color: #ffb703;
+}
+
+.country-select option {
+  background: #1c2541;
+  color: #f5f7ff;
+}
+
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.field-error {
+  font-size: 11px;
+  color: #ff6b6b;
+  margin-top: 2px;
+}
+
+.pay-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #ffb703, #ffd460);
+  color: #1a1a1a;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: "Trebuchet MS", sans-serif;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.pay-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(255, 183, 3, 0.4);
+}
+
+.secure-note {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.in-cart-btn {
+  background: rgba(74, 222, 128, 0.2) !important;
+  color: #4ade80 !important;
+  cursor: default !important;
+}
+
+.order-complete-wrapper {
+  width: min(720px, 92%);
+  margin: 50px auto;
+}
+
+.order-complete-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 183, 3, 0.2);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+}
+
+.order-success-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.order-success-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f5f7ff;
+  margin-bottom: 10px;
+}
+
+.order-success-sub {
+  color: #bfc7e6;
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.order-id-line {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 28px;
+}
+
+.order-id {
+  color: #ffb703;
+  font-weight: 700;
+  font-family: "Courier New", monospace;
+}
+
+.cdkey-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.cdkey-row {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(74, 222, 128, 0.2);
+  border-radius: 10px;
+  padding: 14px 20px;
+  text-align: left;
+}
+
+.cdkey-game {
+  font-size: 0.9rem;
+  color: #bfc7e6;
+  margin-bottom: 6px;
+}
+
+.cdkey-key {
+  font-family: "Courier New", monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 2px;
+  word-break: break-all;
+}
+
+.order-meta {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 18px;
+  text-align: left;
+}
+
+.order-meta-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #bfc7e6;
+  padding: 5px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.order-meta-row:last-child {
+  border-bottom: none;
+}
+
+.order-total-val {
+  color: #ffb703;
+  font-weight: 700;
+}
+
+.order-email-note {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 24px;
+}
+
+.order-actions {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 760px) {
+  .checkout-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .field-row {
+    grid-template-columns: 1fr;
+  }
+
+  .user-dropdown {
+    width: 260px;
+  }
+
+  .search-form {
+    display: none;
+  }
+
+  .nav-right {
+    gap: 6px;
   }
 }
