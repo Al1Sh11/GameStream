@@ -3,7 +3,7 @@
 A gaming e-commerce aggregator built with React.js— a centralized hub for discovering games and gaming equipment across Steam, Xbox, PlayStation, and Nintendo.
 
 Owners:Ali Shaer & Sajid Ghandour ,THIS TIME MADE ONLY BY ALI SHAER| Course: CSCI390 – Web Programming (Phase 2)
-To be Honest the file structure below was  made by chatgpt since i want able to create the easy read feel, other than that all other work is original with some help from youtube
+all other work is original with some help from youtube
 ## File Structure
 
 ```
